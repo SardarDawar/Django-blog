@@ -31,9 +31,9 @@
             <h3 style="font-style:italic">{{blogs.title}}</h3>
             by <a href="{% url 'blog-by-author' blogs.author.id %}">{{blogs.author.author}}</a><br>
             {% if blogs.image %}
-           <img src="/media/{{blogs.image}}" style="height:500px; width: 800px;">{% endif %}
-            <div class="embed-responsive embed-responsive-16by9">
-            {% video blogs.video '500x500' %}
+            <img src="/media/{{blogs.image}}" style="height:500px; width: 800px;">{% endif %}
+            <div class="embed-responsive embed-responsive-4by3">
+            {% video blogs.video '200x200' %}
         </div>
             <p>{{blogs.description}}
             </p>
@@ -52,7 +52,7 @@
             <div style="border:solid;border-color: red;border-width: 1px ;padding-bottom: 10px;background: white" >
                 <div class="container">
                  <div class="row">                       
-                      <div class="col-md-7">
+                      <div class="col-xs-7">
                         <form method="POST"  action = "{% url 'detail' blogs.slug %}">
                             {% csrf_token %}
                                 <div class="form-group">
@@ -65,8 +65,8 @@
                                 </div>
                                 <div class="form-group">
                                         <label>Comment</label>
-                                        <textarea name="description" type='text' cols="40" rows="5" maxlength="1000" required  class="form-control"
-                  placeholder="Write your comment..." style='resize:none'></textarea>
+                                        <textarea name="description" cols="40" rows="5" maxlength="1000" required id="id_description" class="form-control z-depth-1"
+                  placeholder="Write something here..." style="resize:none;"></textarea>
                                       </div>
                                   
                                 <button type="submit" class="btn btn-default">Post</button><br>
@@ -191,14 +191,8 @@
                         {% if forloop.counter <= 6 %}
                         {% if list.image %}
                     <img src="/media/{{list.image}}" style="height:50px;width:50px">{% else %}
-                   <div class="embed-responsive embed-responsive-1by1">
                     {% video list.video '50x50' %}
-                    </div>
                     {% endif %}
-              
-            
-       
-        
                     <a href="{% url 'detail' list.slug %}" style="color:black">{{list.title}}</a><br>
                    {% endif %}
                     {% endfor %}
@@ -210,11 +204,10 @@
                 </div>
                 <div class="panel-body">
                     <p>Keep in touch, stay tuned with our more blogs. you can subscribe it here</p>
-                    <a href="{% url 'subscribe' %}"  class="btn btn-default" role="button">
-                       
-                            Subscribe 
+                    <a href="{% url 'subscribe' %}" style="color:black">
+                        <h4 style="border:black;border-radius:10px;border-style: solid;border-width: 1px;text-align: center">
+                            Subscribe </h4>
                     </a>
-                    
                 </div>
             </div>
         </div>
