@@ -31,7 +31,7 @@
             <h3 style="font-style:italic">{{blogs.title}}</h3>
             by <a href="{% url 'blog-by-author' blogs.author.id %}">{{blogs.author.author}}</a><br>
             {% if blogs.image %}
-            <img src="/media/{{blogs.image}}" style="height:500px; width: 800px;">{% endif %}
+            <img src="/media/{{blogs.image}}" style="height:500px; width: 500px;">{% endif %}
             <div class="embed-responsive embed-responsive-4by3">
             {% video blogs.video '200x200' %}
         </div>
