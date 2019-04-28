@@ -12,7 +12,7 @@
 By <a href="{% url 'blog-by-author' blogs.author.id %}">{{blogs.author.author}}</a>   <br><br><br>
 {% if blogs.image %}
  <a href="{% url 'detail' blogs.slug %}"> <img src="/media/{{blogs.image}}" style="height:500px; width: 800px;"></a>{% else%}
-            <div class="embed-responsive embed-responsive-16by9">
+            <div class="embed-responsive embed-responsive-4by3">
             {% video blogs.video '500x500' %}
         </div>
 
