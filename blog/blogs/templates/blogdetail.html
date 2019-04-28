@@ -191,8 +191,14 @@
                         {% if forloop.counter <= 6 %}
                         {% if list.image %}
                     <img src="/media/{{list.image}}" style="height:50px;width:50px">{% else %}
+                   <div class="embed-responsive embed-responsive-1by1">
                     {% video list.video '50x50' %}
+                    </div>
                     {% endif %}
+              
+            
+       
+        
                     <a href="{% url 'detail' list.slug %}" style="color:black">{{list.title}}</a><br>
                    {% endif %}
                     {% endfor %}
@@ -204,10 +210,11 @@
                 </div>
                 <div class="panel-body">
                     <p>Keep in touch, stay tuned with our more blogs. you can subscribe it here</p>
-                    <a href="{% url 'subscribe' %}" style="color:black">
-                        <h4 style="border:black;border-radius:10px;border-style: solid;border-width: 1px;text-align: center">
-                            Subscribe </h4>
+                    <a href="{% url 'subscribe' %}" style="color:black" class="btn btn-default" role="button">
+                       
+                            Subscribe 
                     </a>
+                    
                 </div>
             </div>
         </div>
