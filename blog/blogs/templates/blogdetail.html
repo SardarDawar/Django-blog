@@ -79,7 +79,7 @@
                     <h3>{{i.name}}  </h3>
                     {{i.description}}      
                       <div class="new">
-                        {% post_to_facebook object_or_url  "Share on Facebook" %} </div><br><br>
+                        {% post_to_facebook object_or_url  "Share on Facebook" %} </div><br>
                     <!-- {% for j in i.comment %}
                     
                        
@@ -90,10 +90,10 @@
   
                    {% for j in replies %}
                    {% if j.comment.id == i.id %} 
-                   <div class="container" style="left:15%;">
+                   <div class="container" style="left:5%;">
                     <h3>{{j.name}}  </h3>
                    </div>
-                   <div class="container" style="left:15%;">
+                   <div class="container" style="left:5%;">
                     {{ j.description }}  <br><br>
                     <br>
                    </div>
