@@ -27,6 +27,18 @@
 
     <script src="https://cupofjo.com/wp-content/themes/cupofjo/assets/test.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+.body{
+  background-color: white;
+  
+}
+
+
+
+
+
+</style>
 
 <link rel='stylesheet' id='cup-of-jo-style-css'  href='https://cupofjo.com/wp-content/themes/cupofjo/style.css?ver=20181117' type='text/css' media='all' />
 <script type='text/javascript' src='https://cupofjo.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
@@ -37,32 +49,19 @@
 <script type='text/javascript' src='https://cupofjo.com/wp-content/themes/cupofjo/assets/vendor/isotope.pkgd.min.js?ver=5.1.1'></script>
 <script type='text/javascript' src='https://cupofjo.com/wp-content/themes/cupofjo/assets/theme.js?ver=20190116a'></script>
 
-<style>
-
-body,html{
-  background:white;
-	
-  
-}
-
-
-
-
-
-</style>
 
 	
 <body
-style='border-collapse: collapse;margin-left: 0%'   >
-<div class="container" >
+style='background: white;'   >
+<div class="container" style="background:white">
     <div class="row">
         <div class="col-md-12">
 	<div id="page" style='background: white;'>
 		<header id="site-header" role="banner" style='background: white;'>
-		    <div class="row"><div class="col-md-3">
+		    <div class="row"><div class="col-md-2">
             <image src="{% static  'img/logo.jpg'  %}" style="width: 200px;height:200px">
-            </div><div class="col-md-5" style="margin-top:50px">
-               <h1 style="text-align:center;font-size:40px;"><span style=" border-bottom-style:solid;border-bottom-color:red;border-bottom-width: 1px; ;"><span style="color:red" >it</span><span >superstar</span></span>.<span style="color:red">com</span></h1>
+            </div><div class="col-md-4" style="margin-top:50px">
+              <h1 style="text-align:center;font-size:40px;"><span style=" border-bottom-style:solid;border-bottom-color:red;border-bottom-width: 1px; ;"><span style="color:red" >it</span><span >superstar</span></span>.<span style="color:red">com</span></h1>
               <h1 style="text-align:center" >Learning Starts Here</h1>
             </div></div>
 
@@ -102,9 +101,9 @@ style='border-collapse: collapse;margin-left: 0%'   >
 </ul></nav>		</div>
       
 <br><br>
-	<div style="background:white">
+	
 {% block content %}
-
+<div style="background:white"></div>
 {% endblock %}
             
             
@@ -124,6 +123,41 @@ style='border-collapse: collapse;margin-left: 0%'   >
       
             </script>
                </div></div>
-
+               <footer id="colophon" role="contentinfo">
+                <div class="inner">
+                    <div class="footer-about">
+                        <strong>About itsuperstar.com</strong>
+                        <p>Welcome! itsuperstar.com is a daily lifestyle site for women. We cover everything from fashion to culture to parenthood, and we strive to be authentic. As Olive Kitteridge said, "There's no such thing as a simple life." Thank you for reading.
+            
+            
+            
+            </p>
+                        <!-- <a href="/about/"><em>read more</em></a> -->
+                    </div>
+                    <div class="footer-navigation">
+                        <div class="menu-footer-container"><ul id="menu-footer" class="menu"><li id="menu-item-56477" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56477"><a href="{% url 'list' %}">Home</a></li>
+            <li id="menu-item-6474" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6474"><a href="/category/python">Python</a></li>
+            <li id="menu-item-6458" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-6458"><a href="/category/linux">Linux</a></li>
+            <li id="menu-item-56567" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56567"><a href="/category/windows">Windows</a></li>
+            <li id="menu-item-6482" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6482"><a href="/category/networking">Networking</a></li>
+           
+            <!-- <li id="menu-item-7002" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7002"><a href="https://cupofjo.com/about/">About</a></li> -->
+            <li id="menu-item-7008" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7008"><a href="https://cupofjo.com/contact/">Contact</a></li>
+            <!-- <li id="menu-item-7013" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7013"><a href="https://cupofjo.com/faq/">FAQ</a></li> -->
+            </ul></div>			<div class="footer-social">
+                            <h3>Let's Hang Out</h3>
+                            <div class="social-links">
+                                                        <a href="https://www.facebook.com/cupofjoblog" target="_blank" class="social-link facebook"><i class="icon-facebook"></i></a>
+                                                        <a href="https://twitter.com/joannagoddard" target="_blank" class="social-link twitter"><i class="icon-twitter"></i></a>
+                                                        <a href="https://www.pinterest.com/joannagoddard/" target="_blank" class="social-link pinterest"><i class="icon-pinterest"></i></a>
+                                                        <a href="https://www.instagram.com/cupofjo" target="_blank" class="social-link instagram"><i class="icon-instagram"></i></a>
+                                                </div>
+                     
+                            </div> 
+                        </div>
+                    </div>
+                        </div>
+            </footer><!-- #colophon -->
+            
   
        </body></head></html>
