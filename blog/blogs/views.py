@@ -39,7 +39,7 @@ def base1(request):
 def BlogList(request):
     blog = Blog.objects.all()
 
-    paginator = Paginator(blog ,2) # Shows only 10 records per page
+    paginator = Paginator(blog ,5) # Shows only 10 records per page
 
     page = request.GET.get('page')
     try:
