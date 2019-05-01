@@ -49,7 +49,7 @@
                 </tr>
             </table>
         </div><br>
-            <div style="border:solid;border-color: red;border-width: 1px ;padding-bottom: 10px;background: white" >
+            <div style="padding-bottom: 10px;background: white" >
                 <div class="container">
                  <div class="row">                       
                       <div class="col-xs-7">
@@ -57,11 +57,11 @@
                             {% csrf_token %}
                                 <div class="form-group">
                                   <label>Name</label>
-                                  <input name="name" type="text"  class="form-control" placeholder="Name">
+                                  <input name="name" type="text" style="border-color:rgb(226, 223, 221)"   class="form-control" id="id_name" placeholder="Name">
                                 </div>
                                 <div class="form-group">
                                   <label>Email</label>
-                                  <input name="email" type="email" class="form-control" placeholder="Email">
+                                  <input name="email" type="email" style="border-color:rgb(226, 223, 221)" class="form-control" placeholder="Email">
                                 </div>
                                 <div class="form-group">
                                         <label>Comment</label>
@@ -160,19 +160,19 @@
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: center">
+                        <div class=" col-md-6 col-sm-6 col-xs-6" >
+                          
+                            {% send_email object.title "{{blogs.title}}. Check it out!" object_or_url "Gmail" %}
+                            {% post_to_linkedin blogs.title object_or_url "LinkedIn" %}
+
+                        </div><div class="col-md-6 col-sm-6 col-xs-6">
+                     
+                           
+
                             {% post_to_twitter " {{blogs.title}}{{blogs.author.author}}. Check it out!" object_or_url "Twitter" %}
 
 
                             {% post_to_facebook object_or_url "Facebook" %}
-
-
-                            
-                     
-                            {% send_email object.title "{{blogs.title}}. Check it out!" object_or_url "Gmail" %}
-                            {% post_to_linkedin blogs.title object_or_url "LinkedIn" %}
-
-
 
                     
                 </div></div>
