@@ -32,9 +32,10 @@
             by <a href="{% url 'blog-by-author' blogs.author.id %}">{{blogs.author.author}}</a><br>
             {% if blogs.image %}
             <img src="/media/{{blogs.image}}" style="width: 800px;height:500px;">{% endif %}
+            {% if blogs.video %}
             <div class="embed-responsive embed-responsive-4by3" >
             {% video blogs.video '200x200' %}
-        </div>
+        </div>{% endif %}
             <p>{{blogs.description}}
             </p>
 
