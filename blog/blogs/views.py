@@ -13,16 +13,18 @@ from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
 from django.http import HttpResponse
 from django.db.models import Q
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 
 def base(request, slug):
     categories = Category.objects.get(slug=slug)
+    lists = Blog.objects.all()
     blogs = Blog.objects.filter(catagory=categories)
     print(blogs)
     context = {
         'blogs':blogs,
-    
+        'list':lists
     }
     return render(request, 'category.html', context)
 def base1(request):
@@ -35,11 +37,25 @@ def base1(request):
     return render(request, 'base.html', context)
 
 def BlogList(request):
-    blogs = Blog.objects.all()
+    blog = Blog.objects.all()
+
+    paginator = Paginator(blog ,2) # Shows only 10 records per page
+
+    page = request.GET.get('page')
+    try:
+        blogs = paginator.page(page)
+    except PageNotAnInteger:
+    # If page is not an integer, deliver first page.
+        blogs = paginator.page(1)
+    except EmptyPage:
+    # If page is out of range (e.g. 7777), deliver last page of results.
+        blogs = paginator.page(paginator.num_pages)
+        
     for i in (blogs):
         i.description=i.description[:500]
     context = {
-        'blogs':blogs
+        'blogs':blogs,
+        'blog':blog
     }
     return render(request,'bloglist.html',context)
 
@@ -170,6 +186,7 @@ def activate(request, uidb64, token):
         #return HttpResponse('Thank you for your email confirmation. Now you can login your account.')
     return redirect('list')
  
+
 
 def ReplyPage(request,id, slug):
     comment=BlogComment.objects.get(id=id)
